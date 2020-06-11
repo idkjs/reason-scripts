@@ -2,11 +2,9 @@
 
 [@bs.module] external logo : string = "./logo.svg";
 
-let component = ReasonReact.statelessComponent("App");
 
-let make = (~message, _children) => {
-  ...component,
-  render: _self =>
+[@react.component]
+let make = (~message) => {
     <div className="App">
       <div className="App-header">
         <img src=logo className="App-logo" alt="logo" />
@@ -17,5 +15,5 @@ let make = (~message, _children) => {
         <code> (ReasonReact.string(" src/app.re ")) </code>
         (ReasonReact.string("and save to reload."))
       </p>
-    </div>,
+    </div>
 };
